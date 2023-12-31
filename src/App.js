@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
-
+import RecipeCard from "./RecipeCard";
 function App() {
+  const recipeLists = [
+    {
+      id: 0,
+      name: " Apple Smoothie",
+      review: null,
+      category: "Smoothie",
+    },
+    {
+      id: 1,
+      name: " Apple Cake",
+      review: null,
+      category: "Cake",
+    },
+    {
+      id: 2,
+      name: " Orange Cake",
+      review: null,
+      category: "Cake",
+    },
+    {
+      id: 0,
+      name: "Berry  Smoothie",
+      review: null,
+      category: "Smoothie",
+    },
+  ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>My Recipes</h1>
+      {recipeLists.map((recipe) => (
+        <RecipeCard recipe={recipe} />
+      ))}
     </div>
   );
 }
